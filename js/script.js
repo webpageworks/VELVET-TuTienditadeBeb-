@@ -16,8 +16,17 @@ function moverCarrusel(direccion) {
 
     if (!contenedorCarrusel) return;
 
+    // Buscar solamente una tarjeta visible
+    const tarjetas =
+        Array.from(
+            contenedorCarrusel.querySelectorAll(".producto")
+        );
+
     const tarjeta =
-        contenedorCarrusel.querySelector(".producto");
+        tarjetas.find(
+            (producto) =>
+                window.getComputedStyle(producto).display !== "none"
+        );
 
     if (!tarjeta) return;
 
@@ -37,6 +46,7 @@ function moverCarrusel(direccion) {
 }
 
 
+// Flecha derecha
 if (botonDerecha) {
 
     botonDerecha.addEventListener("click", () => {
@@ -46,6 +56,7 @@ if (botonDerecha) {
 }
 
 
+// Flecha izquierda
 if (botonIzquierda) {
 
     botonIzquierda.addEventListener("click", () => {
@@ -92,40 +103,6 @@ if (contenedorCarrusel) {
     );
 
 }
-
-// =====================================
-// DESLIZAR CON EL DEDO
-// =====================================
-
-if (contenedor) {
-
-    let inicioX = 0;
-
-    contenedor.addEventListener("touchstart", (evento) => {
-        inicioX = evento.touches[0].clientX;
-    });
-
-    contenedor.addEventListener("touchend", (evento) => {
-
-        const finalX =
-            evento.changedTouches[0].clientX;
-
-        const diferencia =
-            inicioX - finalX;
-
-        if (Math.abs(diferencia) < 40) return;
-
-        if (diferencia > 0) {
-            moverCarrusel(1);
-        } else {
-            moverCarrusel(-1);
-        }
-
-    });
-
-}
-
-
 
 
 // =====================================
@@ -177,8 +154,11 @@ function filtrarProductos(categoriaElegida) {
 // MENÚ PARA CELULAR
 // =====================================
 
-const menuBtn = document.querySelector(".menu-btn");
-const menu = document.querySelector(".menu");
+const menuBtn =
+    document.querySelector(".menu-btn");
+
+const menu =
+    document.querySelector(".menu");
 
 if (menuBtn && menu) {
 
@@ -270,50 +250,94 @@ botonesProducto.forEach((boton) => {
 
     boton.addEventListener("click", () => {
 
-        const tarjeta = boton.closest(".producto");
+        const tarjeta =
+            boton.closest(".producto");
 
         if (!tarjeta) return;
 
-        const imagen = tarjeta.querySelector("img");
-        const nombre = tarjeta.querySelector("h3");
-        const categoria = tarjeta.querySelector(".categoria");
-        const precio = tarjeta.querySelector(".precio-producto");
-        const descripcion = tarjeta.querySelector("p");
+        const imagen =
+            tarjeta.querySelector("img");
 
-        if (imagen) {
+        const nombre =
+            tarjeta.querySelector("h3");
+
+        const categoria =
+            tarjeta.querySelector(".categoria");
+
+        const precio =
+            tarjeta.querySelector(".precio-producto");
+
+        const descripcion =
+            tarjeta.querySelector("p");
+
+
+        if (imagen && modalImagen) {
+
             modalImagen.src = imagen.src;
             modalImagen.alt = imagen.alt;
+
         }
 
-        if (nombre) {
-            modalNombre.textContent = nombre.textContent.trim();
+
+        if (nombre && modalNombre) {
+
+            modalNombre.textContent =
+                nombre.textContent.trim();
+
         }
 
-        if (categoria) {
-            modalCategoria.textContent = categoria.textContent.trim();
+
+        if (categoria && modalCategoria) {
+
+            modalCategoria.textContent =
+                categoria.textContent.trim();
+
         }
 
-        if (precio) {
-            modalPrecio.textContent = precio.textContent
-                .replace("Bs.", "")
-                .trim();
+
+        if (precio && modalPrecio) {
+
+            modalPrecio.textContent =
+                precio.textContent
+                    .replace("Bs.", "")
+                    .trim();
+
         }
 
-        if (descripcion) {
-            modalDescripcion.textContent = descripcion.textContent.trim();
+
+        if (descripcion && modalDescripcion) {
+
+            modalDescripcion.textContent =
+                descripcion.textContent.trim();
+
         }
 
+
+        // Reiniciar talla
         tallaSeleccionada = "";
 
-        document.querySelectorAll(".talla").forEach((talla) => {
-            talla.classList.remove("seleccionada");
-        });
+        document
+            .querySelectorAll(".talla")
+            .forEach((talla) => {
 
-        modal.classList.add("mostrar");
+                talla.classList.remove("seleccionada");
+
+            });
+
+
+        // Abrir modal
+        if (modal) {
+
+            modal.classList.add("mostrar");
+
+        }
+
         document.body.style.overflow = "hidden";
+
     });
 
 });
+
 
 // =====================================
 // SELECCIÓN DE TALLAS
@@ -335,7 +359,7 @@ tallas.forEach((talla) => {
         talla.classList.add("seleccionada");
 
         tallaSeleccionada =
-            talla.textContent;
+            talla.textContent.trim();
 
     });
 
@@ -347,12 +371,17 @@ tallas.forEach((talla) => {
 // =====================================
 
 if (modalWhatsApp) {
+
     modalWhatsApp.addEventListener("click", () => {
 
-        const productoActual = modalNombre.textContent.trim();
-        const precioActual = modalPrecio.textContent.trim();
+        const productoActual =
+            modalNombre.textContent.trim();
+
+        const precioActual =
+            modalPrecio.textContent.trim();
 
         let mensajeWhatsApp;
+
 
         if (tallaSeleccionada) {
 
@@ -369,11 +398,18 @@ if (modalWhatsApp) {
                 `Hola 😊, estoy interesada en el ${productoActual}.\n` +
                 `💰 Precio: Bs. ${precioActual}\n\n` +
                 `¿Me pueden informar sobre las tallas disponibles?`;
+
         }
 
+
         modalWhatsApp.href =
-    "https://wa.me/" + telefonoWhatsApp + "?text=" + encodeURIComponent(mensajeWhatsApp);
+            "https://wa.me/" +
+            telefonoWhatsApp +
+            "?text=" +
+            encodeURIComponent(mensajeWhatsApp);
+
     });
+
 }
 
 
@@ -393,6 +429,7 @@ function cerrarVentana() {
 
 }
 
+
 if (cerrarModal) {
 
     cerrarModal.addEventListener(
@@ -401,6 +438,7 @@ if (cerrarModal) {
     );
 
 }
+
 
 if (modal) {
 
@@ -416,6 +454,7 @@ if (modal) {
 
 }
 
+
 document.addEventListener("keydown", (evento) => {
 
     if (evento.key === "Escape") {
@@ -426,73 +465,64 @@ document.addEventListener("keydown", (evento) => {
 
 });
 
-function mostrarModelo(modelo) {
-
-    const carrusel = document.querySelector(".carrusel");
-    const productos = document.querySelectorAll(".producto");
-    const flechas = document.querySelectorAll(".flecha");
-
-    if (!carrusel) return;
-
-    carrusel.style.display = "flex";
-
-    const contenedor = document.querySelector(".productos-contenedor");
-
-    if (contenedor) {
-        contenedor.scrollLeft = 0;
-    }
-
-    productos.forEach((producto) => {
-
-        if (producto.dataset.modelo === modelo) {
-            producto.style.display = "";
-        } else {
-            producto.style.display = "none";
-        }
-
-    });
-
-    flechas.forEach((flecha) => {
-        flecha.style.display = "flex";
-    });
-}
 
 // =====================================
-// MOSTRAR MODELO / REINICIAR COLECCIÓN
+// MOSTRAR MODELO
 // =====================================
 
 function mostrarModelo(modelo) {
 
-    const carrusel = document.querySelector(".carrusel");
-    const productos = document.querySelectorAll(".producto");
-    const flechas = document.querySelectorAll(".flecha");
-    const contenedor = document.querySelector(".productos-contenedor");
+    const carrusel =
+        document.querySelector(".carrusel");
+
+    const productos =
+        document.querySelectorAll(".producto");
+
+    const flechas =
+        document.querySelectorAll(".flecha");
+
+    const contenedor =
+        document.querySelector(".productos-contenedor");
+
 
     if (!carrusel) return;
 
-    // Mostrar el carrusel
+
+    // Mostrar carrusel
     carrusel.style.display = "flex";
 
-    // Volver al inicio del carrusel
+
+    // Volver al inicio
     if (contenedor) {
+
         contenedor.scrollLeft = 0;
+
     }
+
 
     // Mostrar solamente el modelo seleccionado
     productos.forEach((producto) => {
 
         if (producto.dataset.modelo === modelo) {
+
             producto.style.display = "";
+
         } else {
+
             producto.style.display = "none";
+
         }
 
     });
 
-    // Mostrar las flechas
+
+    // Mostrar flechas
     flechas.forEach((flecha) => {
+
         flecha.style.display = "flex";
+
     });
+
 }
 
 
@@ -502,24 +532,49 @@ function mostrarModelo(modelo) {
 
 function mostrarColeccion() {
 
-    const carrusel = document.querySelector(".carrusel");
-    const productos = document.querySelectorAll(".producto");
-    const flechas = document.querySelectorAll(".flecha");
+    const carrusel =
+        document.querySelector(".carrusel");
+
+    const productos =
+        document.querySelectorAll(".producto");
+
+    const flechas =
+        document.querySelectorAll(".flecha");
+
+    const contenedor =
+        document.querySelector(".productos-contenedor");
+
 
     if (!carrusel) return;
 
-    // Ocultar las fotos
+
+    // Ocultar carrusel
     carrusel.style.display = "none";
 
-    // Ocultar todos los productos
+
+    // Volver al inicio
+    if (contenedor) {
+
+        contenedor.scrollLeft = 0;
+
+    }
+
+
+    // Ocultar productos
     productos.forEach((producto) => {
+
         producto.style.display = "none";
+
     });
 
-    // Ocultar las flechas
+
+    // Ocultar flechas
     flechas.forEach((flecha) => {
+
         flecha.style.display = "none";
+
     });
+
 }
 
 
@@ -527,15 +582,35 @@ function mostrarColeccion() {
 // VER COLECCIÓN DESDE EL BANNER
 // =====================================
 
-document.querySelector(".boton-inicio")?.addEventListener("click", () => {
-    mostrarColeccion();
-});
+document
+    .querySelectorAll('a[href="#productos"]')
+    .forEach((enlace) => {
+
+        enlace.addEventListener("click", () => {
+
+            mostrarColeccion();
+
+        });
+
+    });
 
 
 // =====================================
-// PRODUCTOS DEL MENÚ
+// BOTONES DEL BANNER
 // =====================================
 
-document.querySelector('a[href="#productos"]')?.addEventListener("click", () => {
-    mostrarColeccion();
-});
+document
+    .querySelectorAll(".boton-inicio")
+    .forEach((boton) => {
+
+        if (boton.getAttribute("href") === "#productos") {
+
+            boton.addEventListener("click", () => {
+
+                mostrarColeccion();
+
+            });
+
+        }
+
+    });

@@ -1619,7 +1619,7 @@ footer a:hover {
 
 .frase-banner img {
     width: 55px !important;
-    height: 55px I !important;
+    height: 55px !important;
     object-fit: contain;
     display: block;
     flex-shrink: 0;
@@ -2175,5 +2175,212 @@ footer a:hover {
 
     .flecha {
         z-index: 20;
+    }
+}
+
+/* =========================================
+   CORRECCIÓN FINAL DEL CARRUSEL MÓVIL
+   ========================================= */
+
+@media (max-width: 700px) {
+
+    /* El carrusel ocupa exactamente el ancho disponible */
+    .carrusel {
+        width: 100%;
+        max-width: 100%;
+        display: flex;
+        padding: 0;
+        margin: 0;
+        overflow: hidden;
+        box-sizing: border-box;
+    }
+
+    /* En celular usamos solamente el deslizamiento con el dedo */
+    .carrusel .flecha {
+        display: none !important;
+    }
+
+    /* Área que se desliza */
+    .carrusel .productos-contenedor {
+        width: 100%;
+        max-width: 100%;
+
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-start;
+
+        gap: 15px;
+
+        overflow-x: auto;
+        overflow-y: hidden;
+
+        padding: 10px 20px 25px;
+        margin: 0;
+
+        box-sizing: border-box;
+
+        scroll-behavior: smooth;
+        scroll-snap-type: x mandatory;
+        scroll-padding-left: 20px;
+
+        scrollbar-width: none;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .carrusel .productos-contenedor::-webkit-scrollbar {
+        display: none;
+    }
+
+    /* Una tarjeta casi completa por pantalla */
+    .carrusel .producto {
+        flex: 0 0 calc(100vw - 40px) !important;
+
+        width: calc(100vw - 40px) !important;
+        min-width: calc(100vw - 40px) !important;
+        max-width: calc(100vw - 40px) !important;
+
+        margin: 0 !important;
+
+        box-sizing: border-box;
+
+        scroll-snap-align: center;
+        scroll-snap-stop: always;
+
+        flex-shrink: 0 !important;
+    }
+
+    /* Imagen completa dentro de la tarjeta */
+    .carrusel .producto-imagen {
+        width: 100%;
+        height: 260px;
+
+        box-sizing: border-box;
+        overflow: hidden;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        background: #f8eeeb;
+    }
+
+    .carrusel .producto-imagen img {
+        width: 100%;
+        height: 100%;
+
+        display: block;
+
+        object-fit: contain !important;
+
+        transform: none !important;
+    }
+
+    /* Evitar que el hover agrande la imagen en celular */
+    .carrusel .producto:hover {
+        transform: none;
+    }
+
+    .carrusel .producto:hover .producto-imagen img {
+        transform: none !important;
+    }
+
+}
+
+@media (max-width: 700px) {
+
+    .carrusel {
+        width: 100%;
+        display: block;
+        padding: 0;
+        margin: 0;
+        overflow: hidden;
+        box-sizing: border-box;
+    }
+
+    /* Las flechas no se muestran en celular */
+    .carrusel .flecha {
+        display: none !important;
+    }
+
+    .carrusel .productos-contenedor {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+
+        gap: 16px;
+
+        overflow-x: auto;
+        overflow-y: hidden;
+
+        padding: 10px 16px 25px;
+        margin: 0;
+
+        box-sizing: border-box;
+
+        scroll-behavior: smooth;
+        scroll-snap-type: x mandatory;
+        scroll-padding-left: 16px;
+
+        scrollbar-width: none;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .carrusel .productos-contenedor::-webkit-scrollbar {
+        display: none;
+    }
+
+    /* CADA TARJETA OCUPA UNA SOLA PANTALLA */
+    .carrusel .producto {
+        flex: 0 0 calc(100% - 32px) !important;
+
+        width: calc(100% - 32px) !important;
+        min-width: calc(100% - 32px) !important;
+        max-width: calc(100% - 32px) !important;
+
+        margin: 0 !important;
+
+        flex-shrink: 0 !important;
+
+        box-sizing: border-box;
+
+        scroll-snap-align: start;
+        scroll-snap-stop: always;
+    }
+
+    /* ÁREA DE LA FOTO */
+    .carrusel .producto-imagen {
+        width: 100%;
+        height: 260px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        box-sizing: border-box;
+        overflow: hidden;
+
+        background: #f8eeeb;
+    }
+
+    /* LA FOTO COMPLETA */
+    .carrusel .producto-imagen img {
+        width: 100%;
+        height: 100%;
+
+        display: block;
+
+        object-fit: contain !important;
+        object-position: center;
+
+        transform: none !important;
+    }
+
+    .carrusel .producto:hover {
+        transform: none;
+    }
+
+    .carrusel .producto:hover .producto-imagen img {
+        transform: none !important;
     }
 }
