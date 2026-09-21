@@ -1730,3 +1730,304 @@ footer a:hover {
 .carrusel .producto {
     margin: 0 auto;
 }
+
+/* =========================================
+   AJUSTES PARA CELULAR
+   ========================================= */
+
+@media (max-width: 700px) {
+
+    /* Evitar que cualquier elemento desborde la pantalla */
+    html,
+    body {
+        width: 100%;
+        max-width: 100%;
+        overflow-x: hidden;
+    }
+
+    /* ================================
+       CONTENEDOR GENERAL
+       ================================ */
+
+    .productos,
+    .contacto,
+    .beneficios,
+    section {
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+
+    /* ================================
+       TÍTULOS Y TEXTOS
+       ================================ */
+
+    h1 {
+        font-size: 34px;
+        line-height: 1.15;
+    }
+
+    h2 {
+        font-size: 28px;
+        line-height: 1.2;
+    }
+
+    h3 {
+        font-size: 21px;
+    }
+
+    p {
+        line-height: 1.5;
+    }
+
+
+    /* ================================
+       BANNER PRINCIPAL
+       ================================ */
+
+    .banner {
+        min-height: auto;
+        padding: 45px 20px;
+    }
+
+    .banner-texto {
+        width: 100%;
+        max-width: 100%;
+        transform: none;
+        text-align: center;
+    }
+
+    .banner-texto .boton {
+        width: 100%;
+        max-width: 300px;
+        margin: 8px auto;
+        box-sizing: border-box;
+    }
+
+
+    /* ================================
+       BOTONES DE MODELOS
+       ================================ */
+
+    .modelos {
+        width: 100%;
+        display: flex !important;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+        padding: 0 10px;
+        box-sizing: border-box;
+    }
+
+    .modelos .filtro {
+        flex: 0 1 auto;
+        max-width: 100%;
+        white-space: normal;
+    }
+
+
+    /* ================================
+       CARRUSEL
+       ================================ */
+
+    .carrusel {
+        width: 100%;
+        max-width: 100%;
+        position: relative;
+        box-sizing: border-box;
+        padding: 0 5px;
+    }
+
+    .productos-contenedor {
+        width: 100%;
+        max-width: 100%;
+        display: flex;
+        gap: 15px;
+        overflow-x: auto;
+        overflow-y: hidden;
+        padding: 10px 5px 25px;
+        box-sizing: border-box;
+
+        scroll-behavior: smooth;
+        scroll-snap-type: x mandatory;
+
+        scrollbar-width: none;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .productos-contenedor::-webkit-scrollbar {
+        display: none;
+    }
+
+
+    /* ================================
+       TARJETAS DE PRODUCTOS
+       ================================ */
+
+    .producto {
+        flex: 0 0 85%;
+        min-width: 85%;
+        max-width: 85%;
+        box-sizing: border-box;
+        scroll-snap-align: center;
+    }
+
+
+    /* ================================
+       IMÁGENES DE PRODUCTOS
+       ================================ */
+
+    .producto-imagen {
+        width: 100%;
+        height: 220px;
+        box-sizing: border-box;
+    }
+
+    .producto-imagen img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+    }
+
+
+    /* ================================
+       INFORMACIÓN DEL PRODUCTO
+       ================================ */
+
+    .producto-info {
+        width: 100%;
+        box-sizing: border-box;
+        padding: 15px;
+    }
+
+    .producto-info p {
+        margin-bottom: 15px;
+    }
+
+
+    /* ================================
+       FLECHAS DEL CARRUSEL
+       ================================ */
+
+    .flecha {
+        width: 38px;
+        height: 38px;
+        min-width: 38px;
+        min-height: 38px;
+        z-index: 10;
+    }
+
+
+    /* ================================
+       MODAL DEL PRODUCTO
+       ================================ */
+
+    .modal {
+        padding: 15px;
+        box-sizing: border-box;
+    }
+
+    .modal-contenido {
+        width: 100%;
+        max-width: 100%;
+        max-height: 90vh;
+        flex-direction: column;
+        overflow-y: auto;
+        border-radius: 22px;
+    }
+
+    .modal-imagen {
+        width: 100%;
+        min-width: 0;
+    }
+
+    .modal-imagen img {
+        width: 100%;
+        max-height: 320px;
+        object-fit: cover;
+    }
+
+    .modal-info {
+        width: 100%;
+        box-sizing: border-box;
+        padding: 20px;
+    }
+
+    .tallas-opciones {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+
+    .talla {
+        flex: 1 1 auto;
+        min-width: 100px;
+    }
+
+
+    /* ================================
+       CONTACTO
+       ================================ */
+
+    .contacto {
+        margin: 30px 10px;
+        padding: 40px 20px;
+        border-radius: 22px;
+    }
+
+    .contacto h2 {
+        font-size: 28px;
+    }
+
+    .contacto .whatsapp {
+        width: 100%;
+        max-width: 300px;
+    }
+
+
+    /* ================================
+       OSITO ASISTENTE
+       ================================ */
+
+    .osito-flotante {
+        right: 15px;
+        bottom: 15px;
+        width: 65px;
+        height: 65px;
+        z-index: 1000;
+    }
+
+    .osito-flotante img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+    }
+
+    .mensaje-asistente {
+        position: fixed;
+        right: 15px;
+        bottom: 90px;
+        width: calc(100% - 30px);
+        max-width: 320px;
+        box-sizing: border-box;
+        z-index: 1001;
+    }
+
+    .asistente-whatsapp {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+
+    /* ================================
+       FOOTER
+       ================================ */
+
+    footer {
+        width: 100%;
+        box-sizing: border-box;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+}
