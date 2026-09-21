@@ -3,32 +3,41 @@
 // =====================================
 
 const contenedor = document.querySelector(".productos-contenedor");
-
 const botonIzquierda = document.querySelector(".flecha.izquierda");
 const botonDerecha = document.querySelector(".flecha.derecha");
 
-if (contenedor && botonDerecha) {
+function moverCarrusel(direccion) {
+
+    if (!contenedor) return;
+
+    const tarjeta = contenedor.querySelector(".producto");
+
+    if (!tarjeta) return;
+
+    const espacio =
+        tarjeta.offsetWidth +
+        15;
+
+    contenedor.scrollBy({
+        left: direccion * espacio,
+        behavior: "smooth"
+    });
+}
+
+
+if (botonDerecha) {
 
     botonDerecha.addEventListener("click", () => {
-
-        contenedor.scrollBy({
-            left: 325,
-            behavior: "smooth"
-        });
-
+        moverCarrusel(1);
     });
 
 }
 
-if (contenedor && botonIzquierda) {
+
+if (botonIzquierda) {
 
     botonIzquierda.addEventListener("click", () => {
-
-        contenedor.scrollBy({
-            left: -325,
-            behavior: "smooth"
-        });
-
+        moverCarrusel(-1);
     });
 
 }
@@ -41,41 +50,32 @@ if (contenedor && botonIzquierda) {
 if (contenedor) {
 
     let inicioX = 0;
-    let finalX = 0;
 
     contenedor.addEventListener("touchstart", (evento) => {
-
         inicioX = evento.touches[0].clientX;
-
     });
 
     contenedor.addEventListener("touchend", (evento) => {
 
-        finalX = evento.changedTouches[0].clientX;
+        const finalX =
+            evento.changedTouches[0].clientX;
 
-        const diferencia = inicioX - finalX;
+        const diferencia =
+            inicioX - finalX;
 
-        if (diferencia > 50) {
+        if (Math.abs(diferencia) < 40) return;
 
-            contenedor.scrollBy({
-                left: 325,
-                behavior: "smooth"
-            });
-
-        }
-
-        if (diferencia < -50) {
-
-            contenedor.scrollBy({
-                left: -325,
-                behavior: "smooth"
-            });
-
+        if (diferencia > 0) {
+            moverCarrusel(1);
+        } else {
+            moverCarrusel(-1);
         }
 
     });
 
 }
+
+
 
 
 // =====================================

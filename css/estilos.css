@@ -2031,3 +2031,67 @@ footer a:hover {
     }
 
 }
+
+/* =========================================
+   CORRECCIÓN DEL CARRUSEL EN CELULAR
+   ========================================= */
+
+@media (max-width: 700px) {
+
+    .carrusel {
+        width: 100%;
+        max-width: 100%;
+        overflow: hidden;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    .productos-contenedor {
+        width: 100%;
+        max-width: 100%;
+        display: flex;
+        gap: 15px;
+
+        overflow-x: auto;
+        overflow-y: hidden;
+
+        padding: 10px 15px 25px;
+        box-sizing: border-box;
+
+        scroll-behavior: smooth;
+        scroll-snap-type: x mandatory;
+
+        scrollbar-width: none;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .productos-contenedor::-webkit-scrollbar {
+        display: none;
+    }
+
+    .producto {
+        flex: 0 0 calc(100vw - 60px);
+        width: calc(100vw - 60px);
+        min-width: calc(100vw - 60px);
+        max-width: calc(100vw - 60px);
+
+        box-sizing: border-box;
+
+        scroll-snap-align: center;
+        scroll-snap-stop: always;
+    }
+
+    .producto-imagen {
+        width: 100%;
+        height: 240px;
+        box-sizing: border-box;
+    }
+
+    .producto-imagen img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+    }
+
+}
