@@ -1,0 +1,1732 @@
+/* =========================
+   CONFIGURACIÓN GENERAL
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #fffaf7;
+    color: #5f514b;
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+button {
+    font-family: inherit;
+    cursor: pointer;
+}
+
+
+/* =========================
+   ENCABEZADO
+========================= */
+
+.header {
+    width: 100%;
+    height: 75px;
+    padding: 0 7%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    background: #fffaf7;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    box-shadow: 0 2px 15px rgba(120, 90, 70, 0.08);
+}
+
+.logo {
+    font-size: 22px;
+    font-weight: bold;
+    color: #8b6b5c;
+}
+
+.menu {
+    display: flex;
+    gap: 35px;
+}
+
+.menu a {
+    color: #76645c;
+    font-size: 15px;
+    transition: 0.3s;
+}
+
+.menu a:hover {
+    color: #d89aa5;
+}
+
+.menu-btn {
+    display: none;
+    border: none;
+    background: none;
+    font-size: 25px;
+}
+
+
+/* =========================
+   BANNER
+========================= */
+
+.banner {
+    min-height: 565px;
+    padding: 70px 8%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    background:
+        radial-gradient(circle at 90% 20%, #f9dfe3 0, transparent 25%),
+        radial-gradient(circle at 10% 80%, #dcecf0 0, transparent 25%),
+        #f7eee8;
+
+    overflow: hidden;
+}
+
+.banner-texto {
+    width: 40%;
+    margin-left: -20px;
+}
+
+.etiqueta {
+    display: inline-block;
+    padding: 8px 18px;
+    margin-bottom: 20px;
+
+    background: #fff;
+    border-radius: 30px;
+
+    color: #c58c97;
+    font-size: 14px;
+}
+
+.banner h1 {
+    font-size: 58px;
+    line-height: 1.1;
+    color: #66534b;
+    margin-bottom: 25px;
+}
+
+.banner p {
+    max-width: 500px;
+    margin-bottom: 30px;
+
+    font-size: 17px;
+    color: #806f67;
+}
+
+.boton {
+    display: inline-block;
+
+    padding: 14px 28px;
+
+    border-radius: 30px;
+
+    background: #d89aa5;
+    color: white;
+
+    font-weight: bold;
+
+    transition: 0.3s;
+}
+.boton-inicio {
+   position: relative !important;
+   left: -50px !important;
+}
+
+.boton:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(180, 120, 130, 0.25);
+}
+
+.banner-osito {
+    width: 45%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.osito {
+    width: 300px;
+    height: 300px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #fff;
+    border-radius: 50%;
+
+    font-size: 150px;
+
+    box-shadow: 0 20px 40px rgba(130, 100, 80, 0.12);
+
+    animation: flotar 3s ease-in-out infinite;
+}
+
+/* =========================
+   logo dentro del circulo principal
+========================= */
+.osito img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    border-radius: 50%;
+}
+
+@keyframes flotar {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-12px);
+    }
+}
+
+
+/* =========================
+   TÍTULOS
+========================= */
+
+.titulo-seccion {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.titulo-seccion span,
+.nosotros span,
+.contacto span {
+    color: #d495a0;
+    font-weight: bold;
+}
+
+.titulo-seccion h2,
+.nosotros h2{
+    margin: 10px 0 15px;
+    color: #5f4b43;
+    font-size: 40px;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+}
+.nosotros p{
+    color: #806f67;
+    line-height: 1.8;
+    max-width: 650px;
+    font-style: italic;
+    font-size: 17px;
+}
+.nosotros span{
+    display: inline-block;
+    padding: 7px 15px;
+    color: #9d7279;
+    background: #f3e2df;
+    border: 1px dashed #d8b5b8;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: 1.5px;
+    box-shadow: inset 0 1px rgba(120, 90, 80, 0.12);
+}
+.contacto h2 {
+    margin: 8px 0;
+
+    font-size: 38px;
+    color: #66534b;
+}
+
+.titulo-seccion p {
+    color: #8b7b73;
+}
+
+
+/* =========================
+   PRODUCTOS
+========================= */
+
+.productos {
+    margin-top: 80px !important;
+    padding: 90px 7%;
+    background: #fffaf7;
+}
+
+.filtros {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 35px;
+}
+
+.filtro {
+    padding: 10px 22px;
+
+    border: 1px solid #eadbd5;
+    border-radius: 25px;
+
+    background: white;
+    color: #806f67;
+}
+
+.filtro.activo,
+.filtro:hover {
+    background: #d89aa5;
+    color: white;
+    border-color: #d89aa5;
+}
+
+
+/* =========================
+   CARRUSEL
+========================= */
+
+.carrusel {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.productos-contenedor {
+    width: 100%;
+
+    display: flex;
+    gap: 25px;
+
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
+    
+    scrollbar-width: none;
+
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.productos-contenedor::-webkit-scrollbar {
+    display: none;
+}
+
+
+/* =========================
+   TARJETA PRODUCTO
+========================= */
+
+.producto {
+    scroll-snap-align: start;
+    min-width: 100px;
+    max-width: 300px;
+
+    background: white;
+
+    border-radius: 25px;
+
+    overflow: hidden;
+
+    box-shadow: 0 8px 25px rgba(100, 80, 70, 0.08);
+
+    transition: 0.3s;
+}
+
+.producto:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 30px rgba(100, 80, 70, 0.13);
+}
+
+.producto-imagen {
+    height: 350px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: #f6ece7;
+}
+
+.producto-imagen img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+}
+
+.producto-info {
+    padding: 22px;
+}
+
+.categoria {
+    color: #d495a0;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.producto h3 {
+    margin: 5px 0;
+
+    font-size: 22px;
+    color: #66534b;
+}
+
+.producto p {
+    margin-bottom: 18px;
+
+    color: #8b7b73;
+    font-size: 14px;
+}
+
+.boton-producto {
+    width: 100%;
+    padding: 11px;
+    border: none;
+    border-radius: 20px;
+    background: #f0d5d8;
+    color: #775b60;
+    font-weight: bold;
+    transition: all 0.25s ease;
+}
+
+.boton-producto:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 12px rgba(120, 80, 70, 0.15);
+    background: #d89aa5;
+    color: white;
+}
+
+
+/* =========================
+   FLECHAS
+========================= */
+
+.flecha {
+    min-width: 45px;
+    height: 45px;
+
+    border: none;
+    border-radius: 50%;
+
+    background: white;
+    color: #b77d87;
+
+    font-size: 30px;
+
+    box-shadow: 0 5px 15px rgba(100, 80, 70, 0.12);
+
+    z-index: 2;
+}
+
+.flecha:hover {
+    background: #d89aa5;
+    color: white;
+}
+
+
+/* =========================
+   INDICADORES
+========================= */
+
+.indicadores {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+
+    margin-top: 25px;
+}
+
+.indicador {
+    width: 8px;
+    height: 8px;
+
+    border-radius: 50%;
+
+    background: #e7d4d0;
+}
+
+.indicador.activo {
+    width: 22px;
+    border-radius: 10px;
+
+    background: #d89aa5;
+}
+
+
+/* =====================================
+   BENEFICIOS
+   ===================================== */
+
+.beneficios {
+    padding: 60px 25px;
+    display: grid;
+    gap: 25px;
+    background: #fff8f5;
+    border-radius: 30px;
+    margin: 40px 0;
+}
+
+.beneficio {
+    padding: 28px 25px;
+    text-align: center;
+    background: #ffffff;
+    border-radius: 22px;
+    border: 1px solid #f0dfda;
+    box-shadow: 0 6px 18px rgba(80, 60, 50, 0.08);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.beneficio:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(80, 60, 50, 0.14);
+}
+
+.beneficio strong {
+    display: block;
+    color: #66534b;
+    font-size: 18px;
+    margin-bottom: 6px;
+}
+
+.beneficio span {
+    color: #806f67;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.beneficio h3 {
+    margin: 10px 0 8px;
+    color: #66534b;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.beneficio p {
+    margin: 0;
+    color: #806f67;
+    font-size: 14px;
+    line-height: 1.6;
+}
+.beneficio-icono {
+    font-size: 38px;
+    display: block;
+    margin-bottom: 8px;
+}
+
+
+/* =========================
+   NOSOTROS
+========================= */
+
+.nosotros {
+    padding: 70px 25%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #fffaf7;
+    border-radius: 30px;
+    margin: 40px 0;
+    box-shadow: 0 8px 25px rgba(80, 60, 50, 0.08);
+}
+
+.nosotros-texto {
+    max-width: 600px;
+}
+
+.nosotros-texto p {
+    margin-top: 20px;
+
+    color: #806f67;
+}
+
+.nosotros-osito {
+    font-size: 100px;
+    padding: 50px;
+}
+
+
+/* =========================
+   CONTACTO
+========================= */
+
+.contacto {
+    padding: 80px 10%;
+
+    text-align: center;
+
+    background: #f5e1e0;
+}
+
+.contacto p {
+    margin: 15px 0 25px;
+
+    color: #806f67;
+}
+
+.whatsapp {
+    background: #d89aa5;
+    border-radius: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    transition: all 0.25s ease;
+    box-shadow: 0 5px 15px rgba(120, 80, 70, 0.12);
+}
+
+.whatsapp:hover {
+    background: #e3aab4;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(120, 80, 70, 0.20);
+}
+
+
+/* =========================
+   PIE DE PÁGINA
+========================= */
+
+footer {
+    padding: 25px;
+
+    text-align: center;
+
+    background: #66534b;
+    color: white;
+
+    font-size: 14px;
+}
+
+
+/* =========================
+   OSITO ASISTENTE
+========================= */
+
+.asistente {
+    position: fixed;
+
+    right: 25px;
+    bottom: 25px;
+
+    z-index: 999;
+}
+
+/* =====================================
+   OSITO ASISTENTE
+===================================== */
+
+.osito-flotante {
+    position: fixed;
+    right: 25px;
+    bottom: 25px;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background: #f8e5df;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 42px;
+    cursor: pointer;
+    z-index: 1500;
+    box-shadow: 0 8px 25px rgba(80, 60, 50, 0.18);
+
+    animation: ositoFlotando 3s ease-in-out infinite;
+    transition: transform 0.2s ease;
+}
+
+.osito-flotante:hover {
+    transform: scale(1.08);
+}
+
+@keyframes ositoFlotando {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-8px);
+    }
+}
+.mensaje-asistente {
+    position: fixed;
+    right: 25px;
+    bottom: 105px;
+    width: 230px;
+    padding: 15px 18px;
+    background: white;
+    border-radius: 18px;
+    color: #66534b;
+    font-size: 14px;
+    line-height: 1.4;
+    box-shadow: 0 8px 25px rgba(80, 60, 50, 0.15);
+    z-index: 1499;
+}
+
+.mensaje-asistente::after {
+    content: "";
+    position: absolute;
+    right: 25px;
+    bottom: -8px;
+    width: 16px;
+    height: 16px;
+    background: white;
+    transform: rotate(45deg);
+}
+.mensaje-asistente {
+    display: none;
+    position: absolute;
+    right: 0;
+    bottom: 80px;
+
+    width: 210px;
+
+    padding: 15px;
+
+    background: white;
+
+    border-radius: 18px;
+
+    box-shadow: 0 8px 25px rgba(80, 60, 50, 0.15);
+
+    font-size: 13px;
+
+    color: #66534b;
+}
+
+.asistente-whatsapp {
+    display: block;
+    margin-top: 12px;
+    padding: 10px 15px;
+    border-radius: 20px;
+    background: #d89aa5;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: bold;
+    transition: 0.2s ease;
+}
+
+.asistente-whatsapp:hover {
+    transform: translateY(-2px);
+    opacity: 0.9;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 800px) {
+
+    .header {
+        padding: 0 5%;
+    }
+
+    .menu {
+        display: none;
+    }
+
+    .menu-btn {
+        display: block;
+    }
+
+    .banner {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding-left: 8%;
+        padding: 60px 7%;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .banner-texto {
+        width: 100%;
+    }
+
+    .banner h1 {
+        position: relative;
+        left: -15px;
+        font-size: 42px;
+    }
+
+    .banner p {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .banner-osito {
+        width: 100%;
+        margin-top: 40px;
+    }
+
+    .osito {
+        width: 220px;
+        height: 220px;
+        font-size: 110px;
+    }
+
+    .titulo-seccion h2,
+    .nosotros h2,
+    .contacto h2 {
+        font-size: 30px;
+    }
+
+    .producto {
+        min-width: 280px;
+    }
+
+    .beneficios {
+        grid-template-columns: 1fr;
+    }
+
+    .nosotros {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .nosotros-osito {
+        font-size: 70px;
+    }
+
+    .flecha {
+        display: none;
+    }
+}
+/* =========================
+   MENÚ MÓVIL ABIERTO
+========================= */
+
+@media (max-width: 700px) {
+
+    .menu.menu-abierto {
+        display: flex;
+        flex-direction: column;
+
+        position: absolute;
+
+        top: 75px;
+        right: 0;
+
+        width: 220px;
+
+        padding: 20px;
+
+        background: #fffaf7;
+
+        box-shadow: 0 8px 20px rgba(80, 60, 50, 0.12);
+
+        border-radius: 0 0 0 20px;
+
+        gap: 18px;
+    }
+
+}
+/* =========================
+   MODAL PRODUCTO
+========================= */
+
+.modal {
+    display: none;
+
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 2000;
+
+    background: rgba(70, 55, 48, 0.45);
+
+    padding: 25px;
+
+    align-items: center;
+    justify-content: center;
+}
+
+.modal.mostrar {
+    display: flex;
+}
+
+.modal-contenido {
+    position: relative;
+
+    width: 900px;
+    max-width: 100%;
+
+    max-height: 90vh;
+
+    display: flex;
+
+    overflow: auto;
+
+    background: #fffaf7;
+
+    border-radius: 30px;
+
+    box-shadow: 0 20px 60px rgba(60, 45, 40, 0.25);
+}
+
+.cerrar-modal {
+    position: absolute;
+
+    right: 20px;
+    top: 15px;
+
+    width: 40px;
+    height: 40px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background: white;
+
+    color: #806f67;
+
+    font-size: 28px;
+
+    z-index: 5;
+}
+
+.modal-imagen {
+    width: 50%;
+
+    min-height: 500px;
+
+    background: #f6ece7;
+}
+
+.modal-imagen img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+}
+
+.modal-info {
+    width: 50%;
+
+    padding: 60px 45px;
+}
+
+.modal-info > span {
+    color: #d495a0;
+
+    font-size: 14px;
+
+    font-weight: bold;
+}
+
+.modal-info h2 {
+    margin: 8px 0 15px;
+
+    color: #66534b;
+
+    font-size: 35px;
+}
+
+.modal-info p {
+    color: #806f67;
+
+    margin-bottom: 20px;
+}
+
+.precio {
+    margin-bottom: 25px;
+
+    color: #d495a0;
+
+    font-size: 28px;
+
+    font-weight: bold;
+}
+
+.tallas {
+    margin-bottom: 25px;
+}
+
+.tallas strong {
+    display: block;
+
+    margin-bottom: 12px;
+
+    color: #66534b;
+}
+
+.tallas-opciones {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 8px;
+}
+
+.tallas-opciones button {
+    padding: 9px 13px;
+
+    border: 1px solid #eadbd5;
+
+    border-radius: 20px;
+
+    background: white;
+
+    color: #76645c;
+}
+
+.tallas-opciones button:hover {
+    background: #f0d5d8;
+
+    border-color: #d89aa5;
+}
+
+.modal-info .whatsapp {
+    width: 100%;
+
+    text-align: center;
+}
+
+
+/* =========================
+   MODAL EN CELULAR
+========================= */
+
+@media (max-width: 700px) {
+
+    .modal {
+        padding: 15px;
+    }
+
+    .modal-contenido {
+        display: block;
+
+        max-height: 92vh;
+    }
+
+    .modal-imagen {
+        width: 100%;
+
+        height: 300px;
+
+        min-height: 0;
+    }
+
+    .modal-info {
+        width: 100%;
+
+        padding: 30px 25px;
+    }
+
+    .modal-info h2 {
+        font-size: 28px;
+    }
+
+}
+/* =========================
+   TALLAS SELECCIONABLES
+========================= */
+
+.talla {
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.talla.seleccionada {
+    background: #d89aa5;
+    border-color: #d89aa5;
+    color: white;
+}
+/* =========================
+   PRECIO EN PRODUCTO
+========================= */
+
+.precio-producto {
+    margin: 8px 0 10px;
+
+    color: #d495a0;
+
+    font-size: 22px;
+
+    font-weight: bold;
+}
+/* =========================
+   CARRUSEL EN CELULAR
+========================= */
+
+@media (max-width: 700px) {
+
+    .productos-contenedor {
+        gap: 15px;
+        padding: 10px 5px 25px;
+    }
+
+    .producto {
+        min-width: 85%;
+        max-width: 85%;
+        transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+     .producto:hover {
+        transform: translateY(-6px); 
+        box-shadow: 0 12px 30px rgba(80, 60, 50, 0.14);     
+    }
+    .producto:active {
+        transform: scale(0.98);
+    }
+    .producto-imagen {  
+       height: 300px; 
+       border: 6px solid #ead1cc;
+       border-radius: 20px; 
+       overflow: hidden;
+    }
+    .producto-imagen img {
+       width: 100%;
+       height: 100%;  
+       object-fit: cover;
+       transition: transform 0.35s ease; 
+    }
+    .producto:hover .producto-imagen img {
+        transform: scale(1.04);
+    }
+}
+/* =====================================
+   MEJORA DEL ENCABEZADO
+===================================== */
+
+header {
+    background: rgba(255, 250, 247, 0.96);
+    border-bottom: 1px solid #f0dfda;
+    box-shadow: 0 4px 18px rgba(80, 60, 50, 0.05);
+    position: relative;
+    z-index: 1000;
+}
+
+.logo {
+    color: #66534b;
+    font-weight: 800;
+    letter-spacing: 0.3px;
+}
+
+.menu a {
+    color: #806f67;
+    font-weight: 600;
+    transition: color 0.2s ease;
+}
+
+.menu a:hover {
+    color: #d495a0;
+}
+/* =====================================
+   MEJORA DEL BANNER PRINCIPAL
+===================================== */
+
+.banner {
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(135deg, #fff8f5, #f9e9e5);
+}
+
+.banner h1 {
+    color: #5f4b43;
+    font-weight: 800;
+    letter-spacing: 0.3px;
+}
+
+.banner p {
+    color: #806f67;
+}
+
+.banner .boton {
+    box-shadow: 0 6px 18px rgba(120, 80, 70, 0.14);
+    transition: all 0.25s ease;
+}
+
+.banner .boton:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 22px rgba(120, 80, 70, 0.20);
+}
+/* =====================================
+   PRODUCTOS — ACABADO DE TIENDA
+===================================== */
+
+.producto {
+    background: #fffdfc;
+    border: 1px solid #f0dfda;
+    border-radius: 24px;
+    overflow: hidden;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.producto:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 14px 32px rgba(80, 60, 50, 0.15);
+}
+
+.producto-imagen {
+    position: relative;
+    height: 300px;
+    border: 6px solid #ead1cc;
+    border-radius: 20px;
+    overflow: hidden;
+    background: #f8eeeb;
+}
+
+.producto-imagen img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.35s ease;
+}
+
+.producto:hover .producto-imagen img {
+    transform: scale(1.05);
+}
+
+.producto-info {
+    padding: 20px 20px 22px;
+}
+
+.producto-info .categoria {
+    display: inline-block;
+    padding: 5px 11px;
+    border-radius: 15px;
+    background: #f5e4e1;
+    color: #a06f77;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.producto-info h3 {
+    margin: 10px 0 5px;
+    color: #66534b;
+    font-size: 21px;
+}
+
+.precio-producto {
+    margin: 8px 0 10px;
+    color: #d495a0;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.producto-info p {
+    color: #806f67;
+    font-size: 14px;
+    line-height: 1.5;
+    margin-bottom: 17px;
+}
+
+.boton-producto {
+    transition: all 0.25s ease;
+}
+
+.boton-producto:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 12px rgba(120, 80, 70, 0.15);
+}
+/* =====================================
+   CATÁLOGO — ENCABEZADO Y FILTROS
+===================================== */
+
+.productos {
+    position: relative;
+}
+
+.productos .seccion-titulo {
+    color: #5f4b43;
+    font-weight: 800;
+}
+
+.filtros {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin: 25px 0 30px;
+    flex-wrap: wrap;
+}
+
+.filtro {
+    padding: 9px 20px;
+    border: 1px solid #eadbd5;
+    border-radius: 25px;
+    background: #fffaf7;
+    color: #806f67;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+.filtro:hover {
+    background: #f5e4e1;
+    color: #a06f77;
+    transform: translateY(-2px);
+}
+
+.filtro.activo {
+    background: #d89aa5;
+    border-color: #d89aa5;
+    color: white;
+    box-shadow: 0 5px 12px rgba(120, 80, 70, 0.12);
+}
+
+/* =====================================
+   FLECHAS DEL CATÁLOGO
+===================================== */
+
+.flecha {
+    width: 42px;
+    height: 42px;
+    border: 1px solid #eadbd5;
+    border-radius: 50%;
+    background: #fffaf7;
+    color: #806f67;
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+.flecha:hover {
+    background: #f3e2df;
+    color: #a06f77;
+    transform: scale(1.08);
+}
+/* =====================================
+   CATÁLOGO COMPACTO
+===================================== */
+
+.productos {
+    padding-top: 35px;
+    padding-bottom: 35px;
+}
+
+.productos h2 {
+    margin-bottom: 10px;
+}
+
+.filtros {
+    margin: 12px 0 20px;
+}
+
+.productos-contenedor {
+    gap: 18px;
+    padding-top: 5px;
+    padding-bottom: 15px;
+}
+
+.producto {
+    min-height: 0;
+}
+
+.producto-imagen {
+    height: 220px;
+}
+
+.producto-info {
+    padding: 14px 18px 16px;
+}
+
+.producto-info h3 {
+    margin: 7px 0 3px;
+}
+
+.precio-producto {
+    margin: 5px 0 7px;
+}
+
+.producto-info p {
+    margin-bottom: 12px;
+}
+
+.boton-producto {
+    padding: 9px 16px;
+}
+/* =====================================
+   ESPACIADO DEL ENCABEZADO DEL CATÁLOGO
+===================================== */
+
+.productos h2 {
+    margin-top: 0;
+    margin-bottom: 5px;
+}
+
+.productos > p {
+    margin-top: 0;
+    margin-bottom: 12px;
+    line-height: 1.4;
+}
+
+.filtros {
+    margin-top: 8px;
+    margin-bottom: 18px;
+}
+/* =====================================
+   CONTACTO — ESTILO FINAL
+===================================== */
+
+.contacto {
+    padding: 60px 25px;
+    background: #fff8f5;
+    border-radius: 30px;
+    margin: 40px 0;
+    text-align: center;
+}
+
+.contacto h2 {
+    margin: 10px 0 12px;
+    color: #5f4b43;
+    font-size: 36px;
+    font-weight: 800;
+}
+
+.contacto p {
+    max-width: 550px;
+    margin: 0 auto 25px;
+    color: #806f67;
+    line-height: 1.7;
+}
+
+.contacto .whatsapp {
+    max-width: 320px;
+    margin: 0 auto;
+    min-height: 48px;
+}
+
+@media (max-width: 700px) {
+    .contacto {
+        padding: 45px 20px;
+    }
+
+    .contacto h2 {
+        font-size: 30px;
+    }
+}
+/* =====================================
+   FOOTER — ACABADO FINAL
+===================================== */
+
+footer {
+    background: #f3e2df;
+    color: #66534b;
+    padding: 30px 25px;
+    text-align: center;
+    border-top: 1px solid #ead1cc;
+}
+
+footer p {
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+footer a {
+    color: #a06f77;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.2s ease;
+}
+
+footer a:hover {
+    color: #d495a0;
+}
+/* =====================================
+   TÍTULO DE BENEFICIOS
+===================================== */
+
+.beneficios h2 {
+    grid-column: 1 / -1;
+    margin: 0 0 5px;
+    text-align: center;
+    color: #5f4b43;
+    font-size: 32px;
+    font-weight: 800;
+}
+/* =====================================
+   BENEFICIOS — TARJETAS CON CORAZONES
+===================================== */
+
+.beneficios {
+    position: relative;
+    overflow: hidden;
+}
+
+.beneficio {
+    position: relative;
+    overflow: hidden;
+}
+
+.beneficio::before,
+.beneficio::after {
+    position: absolute;
+    color: #f3dfe0;
+    font-size: 55px;
+    opacity: 0.45;
+    pointer-events: none;
+}
+
+.beneficio::before {
+    content: "♡";
+    top: 8px;
+    right: 12px;
+    transform: rotate(15deg);
+}
+
+.beneficio::after {
+    content: "♡";
+    bottom: -8px;
+    left: 12px;
+    font-size: 38px;
+    transform: rotate(-15deg);
+}
+
+.beneficio > * {
+    position: relative;
+    z-index: 1;
+}
+
+.beneficio-icono {
+    font-size: 34px;
+    margin-bottom: 8px;
+}
+
+.beneficio strong {
+    display: block;
+    color: #66534b;
+    font-size: 19px;
+    margin-bottom: 7px;
+}
+
+.beneficio span {
+    display: block;
+    color: #806f67;
+    font-size: 14px;
+    line-height: 1.55;
+}
+.banner {
+    position: relative;
+    min-height: 520px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden;
+
+    background-image: url("../img/banner.webp");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.banner {
+    position: relative;
+    overflow: hidden;
+    min-height: 520px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+    background: linear-gradient(
+        135deg,
+        #fff8f5 0%,
+        #f9e9e5 55%,
+        #f5e1df 100%
+    );
+}
+.banner::before {
+    content: "♡";
+    position: absolute;
+    top: 55px;
+    left: 9%;
+    font-size: 80px;
+    color: #efd3d3;
+    opacity: 0.55;
+    transform: rotate(-15deg);
+}
+
+.banner::after {
+    content: "♡";
+    position: absolute;
+    right: 10%;
+    bottom: 55px;
+    font-size: 65px;
+    color: #ead0d2;
+    opacity: 0.55;
+    transform: rotate(15deg);
+}
+.banner h1 {
+    color: #5f4b43;
+    font-size: 48px;
+    font-weight: 800;
+    margin-bottom: 12px;
+}
+
+.banner p {
+    color: #806f67;
+    font-size: 19px;
+    margin-bottom: 25px;
+}
+
+.banner .boton {
+    box-shadow: 0 6px 18px rgba(120, 80, 70, 0.14);
+    transition: all 0.25s ease;
+}
+
+.banner .boton:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 22px rgba(120, 80, 70, 0.20);
+}
+/* =====================================
+   PARA EL MINILOGO
+===================================== */
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.logo img {
+    width: 48px;
+    height: 48px;
+    object-fit: contain;
+    display: block;
+    background: transparent;
+    border: none;
+}
+/* =====================================
+   PARA EL bebe miniatura
+===================================== */
+.frase-banner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+}
+
+.frase-banner img {
+    width: 55px !important;
+    height: 55px I !important;
+    object-fit: contain;
+    display: block;
+    flex-shrink: 0;
+}
+/* =====================================
+   PARA EL PIE DE PAGINA
+===================================== */
+.footer-marca {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+}
+
+.footer-marca img {
+    width: 38px;
+    height: 38px;
+    object-fit: contain;
+    display: block;
+}
+/* =====================================
+   PARA EL ICONO DONDE DICE PEQUEÑOS DETALLES
+===================================== */
+.nosotros-icono img {
+    width: 70px;
+    height: 70px;
+    object-fit: contain;
+    display: block;
+    margin: 0 auto;
+}
+/* =====================================
+   PARA EL ICONO DONDE DICE ROPA COMODA
+===================================== */
+.beneficio-icono img {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+    display: block;
+    margin: 0 auto;
+}
+
+.banner-contenido {
+    text-align: center;
+    transform: translateX(20px);
+}
+/* =====================================
+   PARA MOVER EL BOTON
+===================================== */
+.banner-texto .boton-inicio {
+    transform: translateX(-10px) !important;
+}
+
+
+.etiqueta {
+    position: relative !important;
+    left: -50px !important;
+    }
+
+    .banner-texto .boton-inicio {
+    position: relative;
+    left: -50px;
+}
+/* =====================================
+   PARA la nube asistente
+===================================== */
+.osito-flotante img {
+    transform: translateX(-20px);
+    width: 150px;
+    height: 150px;
+    object-fit: contain;
+    display: block;
+    
+}
+/* =====================================
+   PARA QUE SOLAMENTE SE MUESTREN LOS 3 BOTONES
+===================================== */
+.modelos {
+    display: flex !important;
+    justify-content: center;
+    gap: 15px;
+    margin: 20px 0;
+}
+
+.modelos .filtro {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+}
+
+/* =====================================
+   PARA OCULTAR EL CARRUSEL
+===================================== */
+.carrusel {
+    display: none;
+    }
+
+/* =====================================
+   PARA CENTRAR EL CARRUSEL
+===================================== */
+    .carrusel {
+    justify-content: center;
+}
+
+.carrusel .productos-contenedor {
+    justify-content: center;
+}
+
+.carrusel .producto {
+    margin: 0 auto;
+}

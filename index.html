@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>VELVET - Tu Tiendita</title>
+
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+
+<body>
+
+    <!-- ENCABEZADO -->
+    <header class="header">
+
+        <div class="logo">
+            <img src="img/LOGOTRANSP.png" alt="Tu Tiendita">
+        <span>VELVET - Tu Tiendita</span>
+        </div>
+
+        <nav class="menu">
+            <a href="#inicio">Inicio</a>
+            <a href="#productos">Productos</a>
+            <a href="#nosotros">Nosotros</a>
+            <a href="#contacto">Contacto</a>
+        </nav>
+
+        <button class="menu-btn">☰</button>
+
+    </header>
+
+
+    <!-- BANNER PRINCIPAL -->
+    <section id="inicio" class="banner">
+
+        <div class="banner-texto">
+
+            <span class="etiqueta">
+                ✨ Ropita para los más pequeños
+            </span>
+
+            <h1>
+                <p class="frase-banner">
+                Dulzura para<br>
+                cada momento <img src="img/LOGOTRANSP.png" alt="">
+                </p>
+                
+            </h1>
+
+            <p>
+                Prendas cómodas, bonitas y pensadas
+                para acompañar cada aventura de tu bebé.
+            </p>
+
+            <a href="#productos" class="boton boton-inicio">
+                Ver colección
+            </a>
+             <a href="#beneficios" class="boton boton-inicio">
+                Pensado para ti y tu bebé
+            </a>
+
+        </div>
+
+
+        <div class="banner-osito">
+            <div class="osito">
+                <img src="img/banner.webp" alt="VELVET">
+            </div>
+        </div>
+
+    </section>
+
+
+    <!-- PRODUCTOS -->
+    <section id="productos" class="productos">
+
+        <div class="titulo-seccion">
+
+            <span>💕 Nuestra colección</span>
+
+            <h2>
+                Elige tu favorito
+            </h2>
+
+            <p>
+                Modelitos cómodos y adorables para tu bebé.
+            </p>
+
+        </div>
+
+
+<!-- MODELOS -->
+<div class="filtros modelos">
+
+    <button class="filtro" onclick="mostrarModelo('esencial')">
+        Modelo Esencial
+    </button>
+
+    <button class="filtro" onclick="mostrarModelo('rayitas')">
+        Modelo Rayitas
+    </button>
+
+    <button class="filtro" onclick="mostrarModelo('capuchita')">
+        Modelo Capuchita
+    </button>
+
+</div>
+
+
+        <!-- CARRUSEL -->
+        <div class="carrusel">
+
+            <button class="flecha izquierda">
+                ‹
+            </button>
+
+
+            <div class="productos-contenedor">
+
+<!-- MODELO ESENCIAL - FOTO 1 -->
+<article class="producto" data-modelo="esencial">
+
+    <div class="producto-imagen">
+        <img
+            src="img/productos/mesencial1.webp"
+            alt="Modelo Esencial"
+        >
+    </div>
+
+    <div class="producto-info">
+
+        <span class="categoria">
+            Básico
+        </span>
+
+        <h3>
+            Modelo Esencial
+        </h3>
+
+        <div class="precio-producto">
+            Bs.50
+        </div>
+
+        <p>
+            Cómodo y práctico para todos los días.
+        </p>
+
+        <button class="boton-producto">
+            Ver detalles
+        </button>
+
+    </div>
+
+</article>
+
+
+<!-- MODELO ESENCIAL - FOTO 2 -->
+<article class="producto" data-modelo="esencial">
+
+    <div class="producto-imagen">
+        <img
+            src="img/productos/mesencial2.webp"
+            alt="Modelo Esencial"
+        >
+    </div>
+
+    <div class="producto-info">
+
+        <span class="categoria">
+            Básico
+        </span>
+
+        <h3>
+            Modelo Esencial
+        </h3>
+
+        <div class="precio-producto">
+            Bs.50
+        </div>
+
+        <p>
+            Cómodo y práctico para todos los días.
+        </p>
+
+        <button class="boton-producto">
+            Ver detalles
+        </button>
+
+    </div>
+
+</article>
+
+
+<!-- MODELO ESENCIAL - FOTO 3 -->
+<article class="producto" data-modelo="esencial">
+
+    <div class="producto-imagen">
+        <img
+            src="img/productos/mesencial3.webp"
+            alt="Modelo Esencial"
+        >
+    </div>
+
+    <div class="producto-info">
+
+        <span class="categoria">
+            Básico
+        </span>
+
+        <h3>
+            Modelo Esencial
+        </h3>
+
+        <div class="precio-producto">
+            Bs.50
+        </div>
+
+        <p>
+            Cómodo y práctico para todos los días.
+        </p>
+
+        <button class="boton-producto">
+            Ver detalles
+        </button>
+
+    </div>
+
+</article>
+
+<!-- MODELO ESENCIAL - FOTO 4 -->
+<article class="producto" data-modelo="esencial">
+
+    <div class="producto-imagen">
+        <img
+            src="img/productos/mesencial4.webp"
+            alt="Modelo Esencial"
+        >
+    </div>
+
+    <div class="producto-info">
+
+        <span class="categoria">
+            Básico
+        </span>
+
+        <h3>
+            Modelo Esencial
+        </h3>
+
+        <div class="precio-producto">
+            Bs.50
+        </div>
+
+        <p>
+            Cómodo y práctico para todos los días.
+        </p>
+
+        <button class="boton-producto">
+            Ver detalles
+        </button>
+
+    </div>
+
+</article>
+
+<!-- MODELO ESENCIAL - FOTO 5-->
+<article class="producto" data-modelo="esencial">
+
+    <div class="producto-imagen">
+        <img
+            src="img/productos/mesencial5.webp"
+            alt="Modelo Esencial"
+        >
+    </div>
+
+    <div class="producto-info">
+
+        <span class="categoria">
+            Básico
+        </span>
+
+        <h3>
+            Modelo Esencial
+        </h3>
+
+        <div class="precio-producto">
+            Bs.50
+        </div>
+
+        <p>
+            Cómodo y práctico para todos los días.
+        </p>
+
+        <button class="boton-producto">
+            Ver detalles
+        </button>
+
+    </div>
+
+</article>           
+
+
+                <!-- MODELO RAYITAS FOTO 1 -->
+                <article class="producto"
+                data-modelo="rayitas">
+
+                    <div class="producto-imagen">
+                        <img
+                            src="img/productos/mrayitas1.webp"
+                            alt="Modelo Rayitas"
+                        >
+                    </div>
+
+                    <div class="producto-info">
+
+                        <span class="categoria">
+                            Especial
+                        </span>
+
+                        <h3>
+                            Modelo Rayas
+                        </h3>
+                        <div class="precio-producto">
+                            Bs.50
+                        </div>  
+                        <p>
+                            Un diseño tierno y moderno.
+                        </p>
+
+                        <button class="boton-producto">
+                            Ver detalles
+                        </button>
+
+                    </div>
+
+                </article>
+<!-- MODELO RAYITAS FOTO 2 -->
+                <article class="producto"
+                data-modelo="rayitas">
+
+                    <div class="producto-imagen">
+                        <img
+                            src="img/productos/mrayitas2.webp"
+                            alt="Modelo Rayas"
+                        >
+                    </div>
+
+                    <div class="producto-info">
+
+                        <span class="categoria">
+                            Especial
+                        </span>
+
+                        <h3>
+                            Modelo Rayas
+                        </h3>
+                        <div class="precio-producto">
+                            Bs.50
+                        </div>  
+                        <p>
+                            Un diseño tierno y moderno.
+                        </p>
+
+                        <button class="boton-producto">
+                            Ver detalles
+                        </button>
+
+                    </div>
+
+                </article>
+
+
+                <!-- MODELO CAPUCHITA
+                 FOTO 1 -->
+                <article class="producto"
+                data-modelo="capuchita">
+
+                    <div class="producto-imagen">
+                        <img
+                            src="img/productos/mcapuchita1.webp"
+                            alt="Modelo Capuchita"
+                        >
+                    </div>
+
+                    <div class="producto-info">
+
+                        <span class="categoria">
+                            Especial
+                        </span>
+
+                        <h3>
+                            Modelo Capuchita
+                        </h3>
+                        <div class="precio-producto">
+                            Bs.50
+                        </div>
+
+                        <p>
+                            Abrigadito y adorable.
+                        </p>
+
+                        <button class="boton-producto">
+                            Ver detalles
+                        </button>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+
+            <button class="flecha derecha">
+                ›
+            </button>
+
+        </div>
+
+
+        <!-- INDICADORES -->
+        <div class="indicadores">
+
+            <span class="indicador activo"></span>
+            <span class="indicador"></span>
+            <span class="indicador"></span>
+
+        </div>
+
+    </section>
+
+
+    <!-- BENEFICIOS -->
+    <section class="beneficios" id="beneficios">
+<div class="beneficio">
+    <div class="beneficio-icono">
+         <img src="img/LOGOTRANSP.png" alt="">
+    </div>
+    <strong>Ropa cómoda</strong>
+    <span>Tejida con amor, con lana hipoalergénica y suave al tacto, pensada para cuidar la delicada piel de tu bebé.</span>
+</div>
+
+<div class="beneficio">
+    <div class="beneficio-icono">💕</div>
+    <strong>Mucho cariño</strong>
+    <span>Cada detalle es preparado con dedicación y mucho cariño, porque tu bebé merece sentirse cómodo y especial.</span>
+</div>
+
+<div class="beneficio">
+    <div class="beneficio-icono">💬</div>
+    <strong>Pedidos fáciles</strong>
+    <span>Encuentra tu modelito favorito, elige la talla y realiza tu pedido de forma fácil y rápida por WhatsApp.</span>
+</div>
+
+    </section>
+
+
+    <!-- NOSOTROS -->
+    <section id="nosotros" class="nosotros">
+
+        <div class="nosotros-texto">
+
+            <span>🌸 Sobre nosotros</span>
+
+            <h2>
+                Pequeños detalles,<br>
+                grandes momentos.
+            </h2>
+
+            <p>
+                Somos una tienda dedicada a ofrecer
+                ropita adorable y cómoda para los más
+                pequeños de la casa.
+            </p>
+
+        </div>
+
+        <div class="nosotros-osito">
+            <img src="img/LOGOTRANSP.png" alt="">
+        </div>
+
+    </section>
+
+
+    <!-- CONTACTO -->
+    <section id="contacto" class="contacto">
+
+        <div>
+            <span>💌 ¿Te gustó algún modelito?</span>
+
+            <h2>
+                Escríbenos por WhatsApp
+            </h2>
+
+            <p>
+                Estamos listos para ayudarte a elegir
+                la ropita perfecta.
+            </p>
+
+           <a
+    href="https://wa.me/59173766324?text=Hola%20😊,%20quisiera%20consultar%20sobre%20la%20ropita%20para%20beb%C3%A9."
+    class="boton whatsapp"
+    target="_blank"
+>
+    💬 Escribir por WhatsApp
+</a>
+
+        </div>
+
+    </section>
+<!-- =========================
+     VENTANA DE PRODUCTO
+========================= -->
+
+<div id="modalProducto" class="modal">
+
+    <div class="modal-contenido">
+
+        <button class="cerrar-modal">
+            ×
+        </button>
+
+        <div class="modal-imagen">
+            <img id="modalImagen" src="" alt="">
+        </div>
+
+        <div class="modal-info">
+
+            <span id="modalCategoria"></span>
+
+            <h2 id="modalNombre"></h2>
+
+            <p id="modalDescripcion"></p>
+
+            <div class="precio">
+                Bs. <span id="modalPrecio">0</span>
+            </div>
+
+            <div class="tallas">
+
+                <strong>Tallas disponibles:</strong>
+
+<div class="tallas-opciones">
+
+    <button class="talla">0-3 meses</button>
+
+    <button class="talla">3-6 meses</button>
+
+    <button class="talla">6-12 meses</button>
+
+    <button class="talla">12-18 meses</button>
+
+</div>
+
+            </div>
+
+            <a
+                id="modalWhatsApp"
+                href="#"
+                target="_blank"
+                class="boton whatsapp"
+            >
+                💬 Pedir por WhatsApp
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
+
+    <!-- PIE DE PÁGINA -->
+    <footer>
+
+        <p class="footer-marca">
+            © 2026 Tu Tiendita de Bebé <img src="img/LOGOTRANSP.png" alt="">
+        </p>
+
+    </footer>
+
+
+    <!-- OSITO ASISTENTE -->
+    <div class="asistente">
+
+        <div class="osito-flotante">
+            <img src="img/LOGOTRANSP.png" alt="Asistente">
+        </div>
+        <div id="mensajeAsistente" class="mensaje-asistente">
+            <strong>¡Hola!🧸</strong>
+            <p>
+            Necesitas ayuda para elegir una ropita?
+            </p>
+<a
+    href="https://wa.me/59173766324?text=Hola%20%F0%9F%98%8A%2C%20estoy%20viendo%20su%20cat%C3%A1logo%20de%20ropita%20para%20beb%C3%A9.%20Quisiera%20consultar%20si%20las%20prendas%20est%C3%A1n%20disponibles%20y%20qu%C3%A9%20tallas%20tienen%20disponibles."
+    target="_blank"
+    class="asistente-whatsapp"
+>
+    💬 Consultar por WhatsApp
+</a>
+    </div>
+
+    </div>
+
+
+    <!-- JAVASCRIPT -->
+    <script src="js/productos.js"></script>
+    <script src="js/script.js"></script>
+
+</body>
+</html>
