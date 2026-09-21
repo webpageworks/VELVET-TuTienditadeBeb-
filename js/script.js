@@ -2,24 +2,36 @@
 // CARRUSEL DE PRODUCTOS
 // =====================================
 
-const contenedor = document.querySelector(".productos-contenedor");
-const botonIzquierda = document.querySelector(".flecha.izquierda");
-const botonDerecha = document.querySelector(".flecha.derecha");
+const contenedorCarrusel =
+    document.querySelector(".productos-contenedor");
+
+const botonIzquierda =
+    document.querySelector(".flecha.izquierda");
+
+const botonDerecha =
+    document.querySelector(".flecha.derecha");
+
 
 function moverCarrusel(direccion) {
 
-    if (!contenedor) return;
+    if (!contenedorCarrusel) return;
 
-    const tarjeta = contenedor.querySelector(".producto");
+    const tarjeta =
+        contenedorCarrusel.querySelector(".producto");
 
     if (!tarjeta) return;
 
-    const espacio =
-        tarjeta.offsetWidth +
-        15;
+    const anchoTarjeta =
+        tarjeta.getBoundingClientRect().width;
 
-    contenedor.scrollBy({
-        left: direccion * espacio,
+    const estilos =
+        window.getComputedStyle(contenedorCarrusel);
+
+    const espacio =
+        parseFloat(estilos.columnGap || estilos.gap) || 0;
+
+    contenedorCarrusel.scrollBy({
+        left: direccion * (anchoTarjeta + espacio),
         behavior: "smooth"
     });
 }
@@ -42,6 +54,44 @@ if (botonIzquierda) {
 
 }
 
+
+// =====================================
+// DESLIZAR CON EL DEDO
+// =====================================
+
+if (contenedorCarrusel) {
+
+    let inicioX = 0;
+
+    contenedorCarrusel.addEventListener(
+        "touchstart",
+        (evento) => {
+            inicioX = evento.touches[0].clientX;
+        }
+    );
+
+    contenedorCarrusel.addEventListener(
+        "touchend",
+        (evento) => {
+
+            const finalX =
+                evento.changedTouches[0].clientX;
+
+            const diferencia =
+                inicioX - finalX;
+
+            if (Math.abs(diferencia) < 40) return;
+
+            if (diferencia > 0) {
+                moverCarrusel(1);
+            } else {
+                moverCarrusel(-1);
+            }
+
+        }
+    );
+
+}
 
 // =====================================
 // DESLIZAR CON EL DEDO

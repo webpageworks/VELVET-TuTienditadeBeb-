@@ -2095,3 +2095,85 @@ footer a:hover {
     }
 
 }
+/* =========================================
+   CARRUSEL MÓVIL — VERSIÓN DEFINITIVA
+   ========================================= */
+
+@media (max-width: 700px) {
+
+    .carrusel {
+        width: 100%;
+        max-width: 100%;
+        overflow: hidden;
+        box-sizing: border-box;
+        position: relative;
+    }
+
+    .productos-contenedor {
+        display: flex;
+        width: 100%;
+        max-width: 100%;
+
+        gap: 15px;
+
+        overflow-x: auto;
+        overflow-y: hidden;
+
+        padding: 10px 20px 25px;
+        margin: 0;
+
+        box-sizing: border-box;
+
+        scroll-behavior: smooth;
+        scroll-snap-type: x mandatory;
+        scroll-padding-left: 20px;
+
+        scrollbar-width: none;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .productos-contenedor::-webkit-scrollbar {
+        display: none;
+    }
+
+    .producto {
+        flex: 0 0 calc(100% - 40px);
+
+        width: calc(100% - 40px);
+        min-width: calc(100% - 40px);
+        max-width: calc(100% - 40px);
+
+        margin: 0;
+
+        box-sizing: border-box;
+
+        scroll-snap-align: start;
+        scroll-snap-stop: always;
+    }
+
+    .producto-imagen {
+        width: 100%;
+        height: 240px;
+
+        box-sizing: border-box;
+        overflow: hidden;
+    }
+
+    .producto-imagen img {
+        width: 100%;
+        height: 100%;
+
+        display: block;
+
+        object-fit: cover;
+    }
+
+    .producto-info {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .flecha {
+        z-index: 20;
+    }
+}
